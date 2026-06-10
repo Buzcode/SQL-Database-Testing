@@ -29,3 +29,10 @@ I designed and executed QA scripts against a mock E-Commerce relational database
 ### 4. Boundary Value Testing on Inventory
 *   **Scenario:** Validate that product stock quantities do not drop below zero in the backend system.
 *   **Query Executed:** [See Test Case 4 in qa_validation_queries.sql](./qa_validation_queries.sql)
+
+  ### Advanced Problem Solving (HackerRank Challenges)
+I actively practice complex logical querying and data manipulation on HackerRank. My solutions to advanced concepts include:
+
+*   [**Type of Triangle**](./HackerRank-SQL-Solutions/Type_of_Triangle.sql): Evaluates geometric constraints using logical `CASE` statements.
+*   [**The PADS**](./HackerRank-SQL-Solutions/The_PADS.sql): Combines multi-tier aggregations (`GROUP BY`), substring manipulations (`LEFT`), and string formatting.
+*   [**Occupations (Row-to-Column Pivot)**](./HackerRank-SQL-Solutions/Occupations_Pivot.sql): *Advanced Solution.* Solves tabular pivoting by combining aggregate `MAX(CASE WHEN...)` operations with analytical window functions (`ROW_NUMBER() OVER (PARTITION BY...)`).
