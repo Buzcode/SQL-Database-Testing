@@ -1,6 +1,6 @@
-# HackerRank SQL Basic Select Challenges (1-15)
+# HackerRank SQL Basic Select Challenges (1-20)
 
-This document tracks my solutions and logic for the first 15 **Basic Select** challenges on HackerRank as I work toward my SQL milestones. All queries are written and tested using the **MySQL** environment.
+This document tracks my solutions and logic for the first 20 **Basic Select** challenges on HackerRank as I work toward my SQL milestones. All queries are written and tested using the **MySQL** environment.
 
 ---
 
@@ -23,6 +23,21 @@ This document tracks my solutions and logic for the first 15 **Basic Select** ch
 | STATE | VARCHAR2(2) |
 | LAT_N | NUMBER |
 | LONG_W | NUMBER |
+
+### 3. The STUDENTS Table
+| Field | Type |
+| :--- | :--- |
+| ID | INTEGER |
+| Name | STRING |
+| Marks | INTEGER |
+
+### 4. The Employee Table
+| Field | Type |
+| :--- | :--- |
+| employee_id | INTEGER |
+| name | STRING |
+| months | INTEGER |
+| salary | INTEGER |
 
 ---
 
@@ -196,4 +211,64 @@ This document tracks my solutions and logic for the first 15 **Basic Select** ch
     SELECT DISTINCT CITY 
     FROM STATION 
     WHERE CITY NOT REGEXP '[aeiou]$';
+    ```
+
+---
+
+### 16. Weather Observation Station 11
+*   **Problem:** Query the list of **CITY** names from **STATION** that either do not start with vowels or do not end with vowels. Your result cannot contain duplicates.
+*   **Query:**
+    ```sql
+    SELECT DISTINCT CITY 
+    FROM STATION 
+    WHERE CITY NOT REGEXP '^[aeiou]' 
+       OR CITY NOT REGEXP '[aeiou]$';
+    ```
+
+---
+
+### 17. Weather Observation Station 12
+*   **Problem:** Query the list of **CITY** names from **STATION** that do not start with vowels and do not end with vowels. Your result cannot contain duplicates.
+*   **Query:**
+    ```sql
+    SELECT DISTINCT CITY 
+    FROM STATION 
+    WHERE CITY NOT REGEXP '^[aeiou]' 
+      AND CITY NOT REGEXP '[aeiou]$';
+    ```
+
+---
+
+### 18. Higher Than 75 Marks
+*   **Problem:** Query the Name of any student in **STUDENTS** who scored higher than 75 Marks. Order your output by the last three characters of each name. If two or more students both have names ending in the same last three characters, secondary sort them by ascending ID.
+*   **Query:**
+    ```sql
+    SELECT Name 
+    FROM STUDENTS 
+    WHERE Marks > 75 
+    ORDER BY RIGHT(Name, 3) ASC, ID ASC;
+    ```
+
+---
+
+### 19. Employee Names
+*   **Problem:** Write a query that prints a list of employee names (i.e.: the name attribute) from the **Employee** table in alphabetical order.
+*   **Query:**
+    ```sql
+    SELECT name 
+    FROM Employee 
+    ORDER BY name ASC;
+    ```
+
+---
+
+### 20. Employee Salaries
+*   **Problem:** Write a query that prints a list of employee names (i.e.: the name attribute) for employees in **Employee** having a salary greater than $2000 per month who have been employees for less than 10 months. Sort your result by ascending employee_id.
+*   **Query:**
+    ```sql
+    SELECT name 
+    FROM Employee 
+    WHERE salary > 2000 
+      AND months < 10 
+    ORDER BY employee_id ASC;
     ```
